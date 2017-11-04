@@ -95,3 +95,4 @@ if (!($judge_authkeys))
 ### exit
 Write-Host "Pless any key..."
 [Console]::ReadKey() | Out-Null
+
