@@ -21,7 +21,7 @@
 
 $vDaemonName = 'cron'
 $vDeamonCommand = '/usr/sbin/cron -f'
-$vDeamonStop = '[[ -f /var/run/crond.pid ]] && kill $([[ -f /var/run/crond.pid ]] && cat /var/run/crond.pid)'
+$vDeamonStop = '[[ -f /var/run/crond.pid ]] && kill $(cat /var/run/crond.pid)'
 $vPid = C:\Windows\System32\bash.exe -c 'pgrep -f /usr/sbin/cron'
 
 function service_start()
