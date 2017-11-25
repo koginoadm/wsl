@@ -7,7 +7,7 @@
 #     like init script.
 #
 # - Install
-#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/sshd.bat" -OutFile "$env:USERPROFILE\cron.bat""
+#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/sshd.bat" -OutFile "$env:USERPROFILE\sshd.bat""
 #
 # - Reference
 #     
@@ -21,7 +21,7 @@
 
 $vDaemonName = 'sshd'
 $vDeamonCommand = '/usr/sbin/sshd -D'
-$vDeamonStop = '[[ -f /var/run/sshd.pid ]] && kill $([[ -f /var/run/sshd.pid ]] && cat /var/run/sshd.pid)'
+$vDeamonStop = '[[ -f /var/run/sshd.pid ]] && kill $(cat /var/run/sshd.pid)'
 $vPid = C:\Windows\System32\bash.exe -c 'pgrep -f /usr/sbin/sshd'
 
 function service_start()
