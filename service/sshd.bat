@@ -7,7 +7,7 @@
 #     like init script.
 #
 # - Install
-#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/sshd.bat" -OutFile "$env:USERPROFILE\sshd.bat""
+#     powershell.exe -Command "Invoke-RestMethod -Uri "https://raw.githubusercontent.com/koginoadm/wsl/master/service/sshd.bat" -OutFile "$env:USERPROFILE\sshd.bat""
 #
 # - Reference
 #     
