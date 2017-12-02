@@ -7,7 +7,7 @@
 #     sshd
 #
 # - Install
-#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/sshd-install.bat" -OutFile "$env:USERPROFILE\install-wsl-and-sshd.bat""
+#     powershell.exe -Command "Invoke-RestMethod -Uri "https://raw.githubusercontent.com/koginoadm/wsl/master/service/install-wsl-and-sshd.bat" -OutFile "$env:USERPROFILE\install-wsl-and-sshd.bat""
 #
 # - Reference
 #     http://qiita.com/ubnt_intrepid/items/84a56a01cf7081401917
