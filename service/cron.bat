@@ -7,7 +7,7 @@
 #     like init script.
 #
 # - Install
-#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/cron.bat" -OutFile "$env:USERPROFILE\cron.bat""
+#     powershell.exe -Command "Invoke-RestMethod -Uri "https://raw.githubusercontent.com/koginoadm/wsl/master/service/cron.bat" -OutFile "$env:USERPROFILE\cron.bat""
 #
 # - Reference
 #     
