@@ -1,13 +1,13 @@
 @setlocal enableextensions enabledelayedexpansion & set "PATH0=%~f0" & PowerShell.exe -Command "& (Invoke-Expression -Command ('{#' + ((Get-Content '!PATH0:'=''!') -join \"`n\") + '}'))" %* & exit /b !errorlevel!
 #
 # - Name
-#     sshd-install.bat
+#     install-wsl-and-sshd.bat
 #
 # - Contents
 #     sshd
 #
 # - Install
-#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/sshd-install.bat" -OutFile "$env:USERPROFILE\service-sshd-install.bat""
+#     powershell.exe -Command "Invoke-RestMethod -Uri "https://koginoadm.github.io/wsl/service/sshd-install.bat" -OutFile "$env:USERPROFILE\install-wsl-and-sshd.bat""
 #
 # - Reference
 #     http://qiita.com/ubnt_intrepid/items/84a56a01cf7081401917
