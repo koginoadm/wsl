@@ -77,10 +77,10 @@ if (!(($netFirewallRule | Where-Object Name -Match SSH-In-TCP).Enabled))
 
 ### setup linux
 Write-Host "$(Get-Date -Format yyyy-MM-ddTHH:mm:sszzz) [INFO]: Setup `"sshd`""
-C:\WINDOWS\system32\bash.exe -c '! ls /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_ed25519_key > /dev/null 2>&1 && dpkg-reconfigure openssh-server # for generate ssh-server key'
-C:\WINDOWS\system32\bash.exe -c "egrep '^UsePrivilegeSeparation yes' /etc/ssh/sshd_config --quiet && sed -r -e 's/^(UsePrivilegeSeparation )(yes)/# `$(date +%Y%m%d) #\1\2\n\1no/g' /etc/ssh/sshd_config -i_`$(date +%Y%m%d_%H%M%S).backup # edit /etc/ssh/sshd_config"
-C:\WINDOWS\system32\bash.exe -c '[ ! -d ${HOME}/.ssh ] && mkdir -m 700 -p ${HOME}/.ssh'
-C:\WINDOWS\system32\bash.exe -c '[ ! -s ${HOME}/.ssh/authorized_keys ] && touch ${HOME}/.ssh/authorized_keys && chmod 600 ${HOME}/.ssh/authorized_keys'
+C:\WINDOWS\system32\bash.exe -c '! ls /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_ed25519_key > /dev/null 2>&1 && sudo dpkg-reconfigure openssh-server # for generate ssh-server key'
+C:\WINDOWS\system32\bash.exe -c "egrep '^UsePrivilegeSeparation yes' /etc/ssh/sshd_config --quiet && sudo sed -r -e 's/^(UsePrivilegeSeparation )(yes)/# `$(date +%Y%m%d) #\1\2\n\1no/g' /etc/ssh/sshd_config -i_`$(date +%Y%m%d_%H%M%S).backup # edit /etc/ssh/sshd_config"
+C:\WINDOWS\system32\bash.exe -c '[[ ! -d ${HOME}/.ssh ]] && mkdir -m 700 -p ${HOME}/.ssh'
+C:\WINDOWS\system32\bash.exe -c '[[ ! -s ${HOME}/.ssh/authorized_keys ]] && touch ${HOME}/.ssh/authorized_keys && chmod 600 ${HOME}/.ssh/authorized_keys'
 
 Write-Host "$(Get-Date -Format yyyy-MM-ddTHH:mm:sszzz) [INFO]: Installed."
 
