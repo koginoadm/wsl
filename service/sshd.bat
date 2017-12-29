@@ -20,8 +20,8 @@
 #
 
 $vDaemonName = 'sshd'
-$vDeamonCommand = '/usr/sbin/sshd -D'
-$vDeamonStop = '[[ -f /var/run/sshd.pid ]] && kill $(cat /var/run/sshd.pid)'
+$vDeamonCommand = 'sudo /usr/sbin/sshd -D'
+$vDeamonStop = '[[ -f /var/run/sshd.pid ]] && sudo kill $(cat /var/run/sshd.pid)'
 $vPid = C:\Windows\System32\bash.exe -c 'pgrep -f /usr/sbin/sshd'
 
 function service_start()
